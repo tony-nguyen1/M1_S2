@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Calcul de factorielle et combinason{% endblock %}
+
+{% block body %}
+http://localhost:8000/beep?n=
+<form action="beep" method="get">
+    <label for="n">Factorielle: </label>
+    <input type="number" name="n" id="factn" value="-1"/>\n
+
+    <label for="combin">Combinaison de n éléments: </label>
+    <input type="number" name="combin" id="combin" value="-1"/>
+
+    <label for="combik">pris à k: </label>
+    <input type="number" name="combin" id="combik" value="-1"/>
+
+    <input type="submit" value="calcul">
+</form>
+{% endblock %}

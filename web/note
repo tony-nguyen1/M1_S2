@@ -1,0 +1,29 @@
+70%CT+30%CC
+
+CC miniprojet ? QCM moodle
+
+faire des alias pour la console
+
+Pourquoi framework ?
+raison économique
+high turnover
+le prochain peut reprendre le travail déjà fait.
+
+client léger (client/server) vs client lourd (SPA) vs SSR html créer côté server (référencement)
+
+Symphony très bien pour faire API REST.
+
+Composant ?
+Les outils utilisés par Symphony
+
+Flex
+langage de config d'un package
+bundle = package + règle (script,config)
+
+Annotations avec prétraitement pour faire des actions en plus avant de l'exécution
+
+composer.json
+php archive
+
+
+["valeur qui apparait dans le twig" => "la valeur"]
