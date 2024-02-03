@@ -34,15 +34,17 @@ class MastermindController extends AbstractController
         $jeu->test('1212');
 
 
-        var_dump($jeu);
-        $jeu_string = serialize($jeu);
+        // var_dump($jeu);
+        $jeu_string = $jeu->serialize();
 
-        var_dump($jeu_string);
+        // print("<br>");
+        // var_dump($jeu_string);
 
         $jeu_bis = new Mastermind();
         $jeu_bis->unserialize($jeu_string);
         // $jeu_bis = $jeu_bis->unserialize($jeu_string);
         // $jeu_bis->unserialize('{"propositions":[["1212",2,0]],"t":4,"secret":"1234"}');
+        print("\n<br>");
         var_dump($jeu_bis);
 
 

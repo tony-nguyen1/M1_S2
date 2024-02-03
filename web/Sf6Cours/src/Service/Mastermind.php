@@ -62,7 +62,12 @@ class Mastermind implements IMastermind
 
         list($x, $y, $z) = unserialize($serializedData);
 
-        var_dump($x,$y,$z);
+        $this->propositions = $x;
+        $this->t = $y;
+        $this->secret = $z;
+
+        // print("xyz<br>");
+        // var_dump($x,$y,$z);
 
         return $x;
     }
