@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Mastermind {% endblock %}
+
+{% block body %}
+<h1>
+Mastermind
+</h1>
+<p>
+Veuillez saisir successivement des combinaisons de 4 chiffres jusqu'à la victoire !
+</p>
+
+<table>
+  <caption>
+    Plateau du jeu
+  </caption>
+  <thead>
+    <tr>
+        <th>Numéro</th>
+        <th>Proposition</th>
+        <th>Bien Placé(s)</th>
+        <th>Mal Placé(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <th>1</th>
+        <form action="testestest" method="get">
+            <th>
+                <input type="text" name="proposition"/>
+            </th>
+            <th>
+                <input type="submit">
+            </th>
+        </form>
+    </tr>
+  </tbody>
+</table>
+
+Veuillez saisir une proposition S.V.P. !
+
+<h2>{{foo}}</h2>
+<h2>{{prop}}</h2>
+
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/home/e20180001091/M1/secondSemester/web/Sf6Cours/src/Controller/MastermindController.php'|file_link(0) }}">src/Controller/MastermindController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/home/e20180001091/M1/secondSemester/web/Sf6Cours/templates/mastermind/index.html.twig'|file_link(0) }}">templates/mastermind/index.html.twig</a></code></li>
+    </ul>
+</div>
+{% endblock %}
