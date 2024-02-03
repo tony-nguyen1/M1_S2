@@ -93,4 +93,3 @@ Proof.
   - assumption.
   - assumption.
 Qed.
-  
