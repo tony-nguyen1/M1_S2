@@ -1,0 +1,22 @@
+intent = quand on veut faire qql, on demande à l'os de le faire pour nous
+prog par events
+
+Exercice 1
+activité main
+utilisation de ressources
+
+Création d'une activité. = contexte
+bundle ???
+
+la version xml
+linearlayout lingne les uns à la suite des autres
+3 propriétés hauteur largeur orientation
+wrap_content prend uniquement la place nécessaire
+
+Exercice 2
+
+Layout 2
+relativelayout
+alignement vertical
+alignement horizontal
+être en dessous de
