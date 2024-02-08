@@ -2,6 +2,8 @@
 
 namespace App\Service;
 
+// use Serializable;
+
 interface iMastermind extends \Serializable { // sauver en session
     public function __construct($taille=4); // crée un nouveau jeu
     public function test($code); // teste une proposition

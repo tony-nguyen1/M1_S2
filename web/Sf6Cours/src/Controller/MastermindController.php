@@ -11,9 +11,12 @@ use App\Service\Mastermind;
 class MastermindController extends AbstractController
 {
     #[Route('/mastermind', name: 'app_mastermind')]
+    // request, injection de dépendance
+    // injection de service
     public function index(Request $request): Response
     {
 
+        // !!!
         $session = $request->getSession();
 
         $session->set('test', "testing");
@@ -25,6 +28,8 @@ class MastermindController extends AbstractController
 
         $jeu = new Mastermind();;
         var_dump($session->get('jeu'));
+        // $session->has('key')
+        // null !== ...
         if (is_null($session->get('jeu'))) {
             // $jeu = new Mastermind();
         } else {
@@ -46,6 +51,7 @@ class MastermindController extends AbstractController
         var_dump($jeu_bis);
 
 
+        // $this->addFlash('notice',$message); //notice,warning,error
 
         return $this->render('mastermind/index.html.twig', [
             'controller_name' => 'MastermindController',

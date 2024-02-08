@@ -18,6 +18,9 @@ class Mastermind implements IMastermind
 
     public function test($code) {
 
+        // isValide
+        // is_string srlen ctype_digit
+
         $nbOk = 0;
         $nbKo = 0;
 
@@ -28,6 +31,8 @@ class Mastermind implements IMastermind
                 $nbKo;
             }
         }
+
+        // strpos()
 
         array_push($this->propositions, [$code,$nbOk,$nbKo]);
     } // teste une proposition
@@ -60,8 +65,9 @@ class Mastermind implements IMastermind
         // $this->t = $data['t'];
         // $this->secret = $data['secret'];
 
+        // affectation destructuré
         list($x, $y, $z) = unserialize($serializedData);
-
+        // list($this->propositions, $this->t, $this->secret) = ...
         var_dump($x,$y,$z);
 
         return $x;
