@@ -3,17 +3,25 @@
 {% block title %} Calcul de factorielle et combinason{% endblock %}
 
 {% block body %}
-http://localhost:8000/beep?n=
 <form action="beep" method="get">
-    <label for="n">Factorielle: </label>
-    <input type="number" name="n" id="factn" value="-1"/>\n
+    <label for="nf">Factorielle: </label>
+    <input type="number" name="nf" id="factn"/>
 
-    <label for="combin">Combinaison de n éléments: </label>
-    <input type="number" name="combin" id="combin" value="-1"/>
+    <label for="n">Combinaison de n éléments: </label>
+    <input type="number" name="n" id="combin"/>
 
-    <label for="combik">pris à k: </label>
-    <input type="number" name="combin" id="combik" value="-1"/>
+    <label for="p">pris à k: </label>
+    <input type="number" name="p" id="combik"/>
 
     <input type="submit" value="calcul">
 </form>
+{% if cmp != 0 %}
+<h1>
+Résultat
+</h1>
+{{ string }}<br>
+<a href="\beep">Reset</a>
+{% else %} Entrez des valeurs.
+{% endif %}
+
 {% endblock %}

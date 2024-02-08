@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 class FactController extends AbstractController
 {
@@ -25,7 +26,7 @@ class FactController extends AbstractController
         return new Response($this->factorielle($x));
     }
 
-    public function factorielle($x): Float
+    public function factorielle($x): int
     {
         if ($x == 0) { return 1; }
         else { return $this->factorielle($x-1)*$x; }
@@ -35,19 +36,39 @@ class FactController extends AbstractController
     #[Route('/combi/{n<\d+>?1}/{p<\d+>?1}')]
     public function combi($n,$p): Response
     {
-        return new Response($this->factorielle($n)/($this->factorielle($p)*$this->factorielle($n-$p)));
+        return new Response($this->combinaison($n,$p));
     }
 
-    //la variable x, digit + valeur par défaut 1
-    #[Route('/test')]
-    public function test(): Response
+    private function combinaison($n,$p):int
     {
-        return $this->render('monTwig.html.twig');
+        return $this->factorielle($n)/($this->factorielle($p)*$this->factorielle($n-$p));
     }
 
     #[Route('/beep')]
-    public function recuperation(): Response
+    public function recuperation($x=null,$y=null): Response
     {
-        return $this->render('monTwig.html.twig');
+        $request = Request::createFromGlobals();
+
+        $nf = $request->query->get('nf');
+        $n = $request->query->get('n');
+        $p = $request->query->get('p');
+
+        $s="";
+        
+        if (is_null($nf) and is_null($n) and is_null($p)) {
+
+        } else if (!is_null($nf) and (strcmp($nf,"")!=0)){
+            print("dans le if");
+            var_dump(intval($nf));
+            $rr=$this->factorielle(intval($nf));
+            $s="Factorielle(".$nf.")=".$rr;
+        } else if (!is_null($n) and !is_null($p)) {
+            $rr=$this->combinaison(intval($n),intval($p));
+            $s="Combinaison(".$n.",".$p.")=".$rr;
+            //$s="test";//$s."Combinaison(".$n.",".$p.")=".strval($rr);
+        }
+
+
+        return $this->render('monTwig.html.twig', ['string'=>$s, 'cmp'=> strcmp($s,"")]);
     }
 }
