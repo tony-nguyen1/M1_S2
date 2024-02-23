@@ -1,23 +1,3 @@
-(* Section Peano.
-
-Parameter N : Set.
-Parameter o : N.
-Parameter s : N -> N.
-Parameters plus mult : N -> N -> N.
-Variables x y : N.
-
-Axiom ax1 : ~((s x) = o).
-Axiom ax2 : exists z, ~(x = o) -> (s z) = x.
-Axiom ax3 : (s x) = (s y) -> x = y.
-Axiom ax4 : (plus x o) = x.
-Axiom ax5 : (plus x (s y)) = s (plus x y).
-Axiom ax6 : (mult x o) = o.
-Axiom ax7 : (mult x (s y)) = (plus (mult x y) x).
-
-End Peano.
-
-Hint Rewrite ax4 ax5 ax6 ax7 : peano_base. *)
-
 Fixpoint plus (n m : nat) {struct n} : nat :=
   match n with
   | 0 => m
@@ -68,10 +48,27 @@ Qed.
 Require Import List.
 
 Fixpoint rev (n: list nat): list nat :=
+(* Ça met le 1er élèm à la fin (hd), puis récursion *)
   match n with
   | nil => nil
-  | hd::tl => app (rev tl) (hd::nil)
+  | hd::tl => app (rev tl) (hd::nil) (* concatenation de 2 listes*)
 end.
 
-Lemma exo2_q1
+Lemma exo2_q1 : forall (l : list nat) (e : nat), 
+rev (app l (e::nil)) = e :: rev l.
+Proof.
+  intro l.
+  intro e.
+  induction l as [| hd tl IHl].
+  - simpl. reflexivity.
+  - simpl. rewrite IHl. reflexivity.
+Qed.
+
+Lemma exo2_q2 : forall (l : list nat), rev(rev(l)) = l.
+Proof.
+  intro l.
+  induction l as [| hd tail IHl].
+  - simpl. reflexivity.
+  - simpl. rewrite exo2_q1. rewrite IHl. reflexivity.
+Qed.
 
