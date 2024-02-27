@@ -1,0 +1,3 @@
+[submodule "mobil/TP1-DevMob"]
+	path = mobil/TP1-DevMob
+	url = git@github.com:SateaMall/TP1-DevMob.git
