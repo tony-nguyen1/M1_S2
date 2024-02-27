@@ -50,12 +50,13 @@ Hint Rewrite ax4 ax5 ax6 ax7 : peano_base.
 
 Ltac prove :=
   repeat
-    (rewrite ax5 || rewrite ax4 || rewrite ax7 || rewrite 6);
+    (rewrite ax5 || rewrite ax4 || rewrite ax7 || rewrite ax6);
   reflexivity.
 
 
 Lemma peano_q1bis : (plus (s o) (s (s o))) = (s (s (s o))).
 Proof.
+  (* prove. *)
   autorewrite with peano_base using try reflexivity.
 Qed.
 
