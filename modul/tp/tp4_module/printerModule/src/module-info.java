@@ -1,0 +1,3 @@
+module printerModule {
+    exports printer;
+}

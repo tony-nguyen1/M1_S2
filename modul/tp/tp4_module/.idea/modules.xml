@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/helloerModule/helloerModule.iml" filepath="$PROJECT_DIR$/helloerModule/helloerModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/introspectionV1/introspectionV1.iml" filepath="$PROJECT_DIR$/introspectionV1/introspectionV1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/introspectionV2mod1/introspectionV2mod1.iml" filepath="$PROJECT_DIR$/introspectionV2mod1/introspectionV2mod1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/introspectionV2mod2/introspectionV2mod2.iml" filepath="$PROJECT_DIR$/introspectionV2mod2/introspectionV2mod2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/printerModule/printerModule.iml" filepath="$PROJECT_DIR$/printerModule/printerModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tp4_module.iml" filepath="$PROJECT_DIR$/tp4_module.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,3 @@
+module helloerModule {
+    requires printerModule;
+}
