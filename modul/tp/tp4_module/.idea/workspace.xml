@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8fe8ebba-c577-4403-83e0-b9f02efac57a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/introspectionV2mod2/src/fr/umontpellier/etu/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/introspectionV2mod1/src/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/introspectionV2mod1/src/foo/Foo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/introspectionV2mod2/introspectionV2mod2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/introspectionV2mod2/introspectionV2mod2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/introspectionV2mod2/src/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../web/Sf6GestionTournoi/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../web/Sf6GestionTournoi/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../web/Sf6GestionTournoi/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../web/Sf6GestionTournoi/composer.lock" afterDir="false" />
     </list>
