@@ -1,5 +1,5 @@
 Inductive Formula :=
-  | Var : Formula          (* Variable propositionnelle *)
+  | Var : Formula         (* Variable propositionnelle *)
   | Not : Formula -> Formula      (* Négation *)
   | And : Formula -> Formula -> Formula   (* Conjonction *)
   | Or : Formula -> Formula -> Formula    (* Disjonction *)
@@ -32,3 +32,9 @@ Fixpoint nbc (F : Formula) {struct F} : nat :=
   | Equ P Q => 1 + nbc P + nbc Q
   end.
 
+Require Import FunInd.
+
+Lemma q5 : forall (f : Formula), length (sub(f)) <= 2*nbc(f)+1.
+Proof.
+  intro.
+  Functional Scheme even_ind := Induction for nbc Sort Sub.
