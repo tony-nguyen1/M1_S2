@@ -3,12 +3,15 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Doctrine\ORM\EntityManagerInterface;
 
 use App\Entity\Evenement;
 use App\Entity\Tournoi;
+use App\Form\EvenementType;
+use App\Form\TnoiType;
 
 class TournoiController extends AbstractController
 {
@@ -52,5 +55,47 @@ class TournoiController extends AbstractController
             $entityManager->flush();
             return new Response("Le tournoi {$tnoi->getDescription()} a été enregistré dans l'événement {$evt->getNom()} !");
         }
+    }
+
+    #[Route("/tournoi/saisirEv",name:"formEv")]
+    public function newEv(Request $request, EntityManagerInterface $entityManager): Response {
+        $ev = new Evenement();
+        $form = $this->createForm(EvenementType::class, $ev); // le formulaire est créé
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            // $form->getData() holds the submitted values
+            // but, the original `$task` variable has also been updated
+            $ev = $form->getData();
+
+            // saving the task to the database
+            $entityManager->persist($ev); // en tampon
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_tournoi');
+        }
+
+        return $this->render('tournoi/saisieTnoi.html.twig', ['form' => $form]);
+    }
+
+    #[Route("/tournoi/saisirTnoi",name:"formTnoi")]
+    public function newTnoi(Request $request, EntityManagerInterface $entityManager): Response {
+        $tnoi = new Tournoi();
+        $form = $this->createForm(TnoiType::class, $tnoi); // le formulaire est créé
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            // $form->getData() holds the submitted values
+            // but, the original `$task` variable has also been updated
+            $tnoi = $form->getData();
+
+            // saving the task to the database
+            $entityManager->persist($tnoi); // en tampon
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_tournoi');
+        }
+
+        return $this->render('tournoi/saisieTnoi.html.twig', ['form' => $form]);
     }
 }

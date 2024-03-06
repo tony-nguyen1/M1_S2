@@ -21,3 +21,5 @@ php bin/console doctrine:query:sql "SELECT name FROM sqlite_schema WHERE type ='
 php bin/console doctrine:migrations:diff
 symfony console make:controller
 composer require symfony/twig-bundle
+composer require symfony/form
+php bin/console make:form
