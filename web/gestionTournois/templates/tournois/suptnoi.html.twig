@@ -1,0 +1,16 @@
+{# templates/tournois/supprimer.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Supprimer un tournois{% endblock %}
+
+{% block body %}
+    <h1>Supprimer un tournois</h1>
+
+    {{ form_start(form) }}
+        <div>
+            {{ form_label(form.tournois, 'Sélectionnez le tournois à supprimer :') }}
+            {{ form_errors(form.tournois) }}
+            {{ form_widget(form.tournois, {'attr': {'class': 'custom-select'}}) }}
+        </div>
+    {{ form_end(form) }}
+{% endblock %}

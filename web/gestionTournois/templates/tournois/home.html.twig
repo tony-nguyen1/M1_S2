@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block title %}Page d'accueil{% endblock %}
+
+{% block body %}
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="flash-{{ label }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
+<h1>Routes</h1>
+<nav>
+    <ul>
+        <li><a href="https://localhost:8000/tournois">Liste des évènements</a></li>
+        <li><a href="https://localhost:8000/tournois/eventForm">Ajouter un évènement</a></li>
+        <li><a href="https://localhost:8000/tournois/tnoiForm">Ajouter un tournoi</a></li>
+        <li><a href="https://localhost:8000/tournois/suprTnoiForm">Supprimer un tournoi</a></li>
+
+        <!-- Ajoutez d'autres liens de menu ici -->
+    </ul>
+</nav>
+{% endblock %}

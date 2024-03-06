@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{# Assuming you meant to name the block, common names include 'content' or 'body' #}
+{% block body %}
+<h1>Liste des événements et des Tournois</h1>
+<ul>
+    {# Remove the double curly braces inside the for loop #}
+    {% for e in events %}
+    <li> 
+        <h2>{{e.id}}-{{ e.nom }}</h2>
+        <ul>
+            {% for t in e.tournois %}
+            <li> <em>{{ t.nom }}</em> ({{ t.description }})</li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
