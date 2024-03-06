@@ -1,3 +1,6 @@
 [submodule "mobil/TP1-DevMob"]
 	path = mobil/tp/TP1-DevMob
 	url = git@github.com:SateaMall/TP1-DevMob.git
+[submodule "mobil/tp/TP2-DevMob"]
+	path = mobil/tp/TP2-DevMob
+	url = git@github.com:SateaMall/TP2-DevMob.git

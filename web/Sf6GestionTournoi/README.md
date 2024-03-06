@@ -14,5 +14,10 @@ touch /home/tony/M1/secondSemester/web/Sf6GestionTournoi/var/data.db
 sudo apt-get install php-sqlite3
 php bin/console doctrine:query:sql "create table essai (nom varchar(10));"
 php bin/console doctrine:query:sql "select * from essai"
+php bin/console make:entity
 php bin/console make:migration
- php bin/console doctrine:migrations:migrate
+php bin/console doctrine:migrations:migrate
+php bin/console doctrine:query:sql "SELECT name FROM sqlite_schema WHERE type ='table' AND name NOT LIKE 'sqlite_%';"
+php bin/console doctrine:migrations:diff
+symfony console make:controller
+composer require symfony/twig-bundle
